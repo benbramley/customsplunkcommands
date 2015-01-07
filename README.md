@@ -3,7 +3,8 @@ customsplunkcommands
 
 Collection of custom built Splunk commands 
 
-cacheget.py
+rediscacheget.py
+----------------
 
 This is a custom lookup command which enables Splunk to connect to a Redis cache lookp field values.
 
