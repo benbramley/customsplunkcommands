@@ -12,9 +12,11 @@ To use, copy the rediscacheget.py file either to an application or the default s
 
 Edit transforms.conf to tell Splunk to use the cacheget.py file as a lookup command:
 
+```
 [rediscachelookup]                                                                                                                            
 external_cmd = rediscacheget.py                                                                                                              
-fields_list = [INSERT FIELDS TO LOOKUP HERE] 
+fields_list = [INSERT FIELDS TO LOOKUP HERE]
+```
 
 Then restart Splunk for the changes to take effect.
 
@@ -27,8 +29,10 @@ To use copy the makotransform.py file to either an application or the default se
 
 Edit commands.conf to tell Splunk where to find this command:
 
+```
 [makotransform]
 filename = makotransform.py
+```
 
 Templates should be placed in the $APP_HOME/templates and named <templatename>.txt e.g. $SPLUNK_HOME/etc/app/search/templates/mytemplate.txt
 
@@ -36,6 +40,7 @@ Then restart Splunk for the changes to take effect.
 
 This command has a number of uses for example you could create a html email message template and populate it with an error message e.g.
 
+```
 search index=someindex error=* | makotransform template=mytemplate fields="host,error" outfield=emailtosend
 
 <html>
@@ -43,6 +48,7 @@ search index=someindex error=* | makotransform template=mytemplate fields="host,
     <p>An error has occurred - ${error} on host ${host}</p>
 </body>
 </html>
+```
 
 This will produce a field for each error event called emailtosend which could then be piped to an alert command.
 
