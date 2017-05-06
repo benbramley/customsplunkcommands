@@ -27,7 +27,7 @@ This is a custom search command which takes any field as an input (defaults to _
 
 To use copy the makotransform.py file to either an application or the default search application into the bin folder e.g. $SPLUNK_HOME/etc/app/search/bin
 
-Edit commands.conf to tell Splunk where to find this command:
+Edit commands.conf to tell Splunk where to find the command script:
 
 ```
 [makotransform]
